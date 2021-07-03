@@ -1,2 +1,2 @@
-build/**/* linguist-vendored
-public/**/* linguist-vendored
+*.html linguist-language=TypeScript
+*.js linguist-language=TypeScript
