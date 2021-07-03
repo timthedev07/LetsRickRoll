@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
 
-function App() {
+const id = "dQw4w9WgXcQ";
+
+const App:React.FC = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-content">
+        <h1 className="heading">Rick Roll</h1>
+        <h1 className="subheading">The #1 Internet Joke/Meme</h1>
+
+        <div className="video-player-wrapper">
+          <iframe
+              className="video-player"
+              title="video"
+              src={`https://www.youtube.com/embed/${id}?showinfo=0&enablejsapi=1&origin=https://creativity-matters.netlify.app&autoplay=1`}
+              frameBorder="0"
+              allowFullScreen
+              
+            >
+          </iframe>
+        </div>
+        
+      </div>
     </div>
   );
 }

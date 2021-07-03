@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  background-color: rgb(46, 46, 46);
+  color: white;
+}
+
+.video-player {
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px rgb(2, 3, 2);
+  width: 80vw;
+  height: 45vw;
+}
+@media screen and (max-width: 800px) {
+  .video-player {
+    width: 75vw;
+    height: 42.1875vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  .video-player {
+    width: 70vw;
+    height: 39.375vw;
+  }
+}
+.video-player-wrapper {
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-content {
+  padding: 10px;
+}
+
+.app-content .heading {
+  font-family: "Playfair Italic";
+  text-align: center;
+  font-size: calc(26px + 4vw);
+  margin: 0;
+  margin-top: 20px;
+}
+.app-content .subheading {
+  font-family: "Playfair Italic";
+  text-align: center;
+  font-size: calc(15px + 2vw);
+  margin-top: 0;
+}
+
+
