@@ -1,2 +1,2 @@
-production/**/* linguist-vendored
+build/**/* linguist-vendored
 public/**/* linguist-vendored
