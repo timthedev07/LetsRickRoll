@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Sound from "react-sound";
 import "./styles.css";
-import Rickroll from "./rickroll.gif";
 import Rickroll2 from "./rickroll2.gif";
 
 const id = "dQw4w9WgXcQ";
@@ -45,7 +44,6 @@ const App: React.FC = () => {
               autoLoad
             />
             <div className="video-player-wrapper" style={{ flexWrap: "wrap" }}>
-              <img className="rickroll-gif" src={Rickroll} alt="rickroll" />
               <img className="rickroll-gif" src={Rickroll2} alt="rickroll" />
             </div>
             <h1 className="heading">Rick Roll</h1>
