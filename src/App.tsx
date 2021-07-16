@@ -20,57 +20,17 @@ const App: React.FC = () => {
     getSong();
   });
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        setTimeout(() => {
-          window.location.replace(
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          );
-        }, 10000);
-      }
-    });
-  });
-
   return (
     <div className="App">
       <div className="app-content">
-        {visit ? (
-          <>
-            <Sound
-              url={mp3Url}
-              playStatus={play ? "PLAYING" : "STOPPED"}
-              loop
-              autoLoad
-            />
-            <div className="video-player-wrapper" style={{ flexWrap: "wrap" }}>
-              <img className="rickroll-gif" src={Rickroll2} alt="rickroll" />
-            </div>
-            <h1 className="heading">Rick Roll</h1>
-            <h1 className="subheading">
-              The #1 Internet Joke/Meme(don't tell others this is a rick roll!)
-            </h1>
-            <h3 className="subsubheading">
-              Despite being a joke, the song itself is actually quite nice
-            </h3>
-            <div className="video-player-wrapper">
-              <iframe
-                ref={iframeRef}
-                className="video-player"
-                title="video"
-                src={`https://www.youtube.com/embed/${id}?showinfo=0&enablejsapi=1&origin=https://creativity-matters.netlify.app`}
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </>
-        ) : (
+        {!visit ? (
           <div
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               height: "100vh",
+              zIndex: 100000,
             }}
           >
             <button
@@ -93,7 +53,33 @@ const App: React.FC = () => {
               Check this out!
             </button>
           </div>
-        )}
+        ) : null}
+        <Sound
+          url={mp3Url}
+          playStatus={play ? "PLAYING" : "STOPPED"}
+          loop
+          autoLoad
+        />
+        <div className="video-player-wrapper" style={{ flexWrap: "wrap" }}>
+          <img className="rickroll-gif" src={Rickroll2} alt="rickroll" />
+        </div>
+        <h1 className="heading">Rick Roll</h1>
+        <h1 className="subheading">
+          The #1 Internet Joke/Meme(don't tell others this is a rick roll!)
+        </h1>
+        <h3 className="subsubheading">
+          Despite being a joke, the song itself is actually quite nice
+        </h3>
+        <div className="video-player-wrapper">
+          <iframe
+            ref={iframeRef}
+            className="video-player"
+            title="video"
+            src={`https://www.youtube.com/embed/${id}?showinfo=0&enablejsapi=1&origin=https://creativity-matters.netlify.app`}
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
