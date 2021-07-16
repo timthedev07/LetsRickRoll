@@ -78,3 +78,29 @@ html {
   object-fit: cover;
   object-position: center center;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+    transform: translateY(100%);
+  }
+  99% {
+    cursor: default;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: all;
+    transform: translateY(0%);
+    transition: 0.2s;
+  }
+}
+
+.start-button {
+  animation: cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s fadeIn;
+  animation-play-state: running;
+  cursor: pointer;
+}

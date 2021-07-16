@@ -39,6 +39,7 @@ const App: React.FC = () => {
             border: "none",
             boxShadow: "0 0 5px gray",
           }}
+          className="start-button"
         >
           Check this out!
         </button>
