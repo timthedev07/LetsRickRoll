@@ -22,38 +22,31 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <div className="app-content">
-        {!visit ? (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100vh",
-              zIndex: 100000,
-            }}
-          >
-            <button
-              onClick={() => {
-                setVisit(true);
-                setPlay(true);
-              }}
-              style={{
-                width: "280px",
-                height: "100px",
-                borderRadius: "7px",
-                outline: "none",
-                fontSize: "25px",
-                backgroundColor: "#424242",
-                color: "white",
-                border: "none",
-                boxShadow: "0 0 5px gray",
-              }}
-            >
-              Check this out!
-            </button>
-          </div>
-        ) : null}
+      <div className={`start-panel${visit ? " started" : ""}`}>
+        <button
+          onClick={() => {
+            setVisit(true);
+            setPlay(true);
+          }}
+          style={{
+            width: "280px",
+            height: "100px",
+            borderRadius: "7px",
+            outline: "none",
+            fontSize: "25px",
+            backgroundColor: "#424242",
+            color: "white",
+            border: "none",
+            boxShadow: "0 0 5px gray",
+          }}
+        >
+          Check this out!
+        </button>
+      </div>
+      <div
+        className="app-content"
+        style={{ visibility: visit ? "visible" : "hidden" }}
+      >
         <Sound
           url={mp3Url}
           playStatus={play ? "PLAYING" : "STOPPED"}

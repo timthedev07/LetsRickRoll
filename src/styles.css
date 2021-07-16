@@ -4,6 +4,10 @@ body {
   color: white;
 }
 
+html {
+  background-color: rgb(46, 46, 46);
+}
+
 .video-player {
   border-radius: 20px;
   box-shadow: 4px 4px 10px rgb(2, 3, 2);
@@ -31,8 +35,23 @@ body {
   align-items: center;
 }
 
-.app-content {
-  padding: 10px;
+.start-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 1000000000;
+  transition: 0.4s;
+  transform: translateY(0);
+  position: absolute;
+  width: 100%;
+  background-color: rgb(46, 46, 46);
+}
+
+.start-panel.started {
+  transition: 0.4s;
+  transform: translateY(-1000vh);
+  z-index: -10;
 }
 
 .app-content .heading {
@@ -55,7 +74,7 @@ body {
 
 .rickroll-gif {
   height: 100vh;
-  width: 100vw;
+  width: 99vw;
   object-fit: cover;
   object-position: center center;
 }
